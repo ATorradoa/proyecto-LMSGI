@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-08">
+		<title>Pagina de cafe</title>
+		<style type="text/css">
+			* {
+				box-sizing:border-box;
+			}
+			body {
+				background-image:url(fondo.jpg);
+				background-attachment:fixed;
+				background-repeat:no-repeat;
+				background-size:cover;
+				font-family:serif;
+			}
+			div.principal {
+				margin:auto;
+				width:50%;
+				display:flex;
+				flex-wrap:wrap;
+			}
+			header {
+				width:100%;
+				background-color:#995F2F;
+				text-align:center;
+			}
+			nav ul {
+				padding:0px;
+				margin:0px;
+			}
+			nav ul li {
+				display:inline-block;
+				width:200px;
+			}
+			nav a {
+				display:inline-block;
+				text-decoration:none;
+				color:white;
+				padding:15px;
+			}
+			nav a:hover {
+				background-color:grey;
+			}
+			main {
+				width:100%;
+				flex-wrap:wrap;
+				justify-content:space-around;
+				background-color:#F3E4C9;
+				text-align:center;
+			}
+			main img {
+				width:32%;
+			}
+			article {
+				text-align:center;
+			}
+			h2 {
+				border-bottom:1px solid black;
+				border-top:1px solid black;
+				color:rgb(170, 119, 99);
+			}
+			footer {
+				width:100%;
+				text-align:center;
+				background-color:#995F2F;
+			}
+			footer div {
+				position:fixed;
+				right:30px;
+				bottom:30px;
+				background-color:rgb(170, 97, 65);
+				font-weight:bolder;
+				cursor: pointer;
+				border-radius: 4px;
+			}
+			fieldset p {
+				font-family:sans-serif;
+				font-size:2rem;
+				font-weight:bolder;
+				font-style:oblique;
+				text-shadow:5px 5px 5px black;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function pedirTelefono() {
+				let telefono = prompt("Introduce tu teléfono para que la cafetería te llame:");
+				if (telefono === null) {
+					return; 
+				}
+				if (telefono === "") {
+					alert("Error, no ha escrito nada");
+				} 
+				else if (isNaN(telefono)) {
+					alert("Error, solo se permiten numeros");
+				} 
+				else {
+					alert("¡Perfecto! Te llamaremos al " + telefono + " en cuanto la línea esté libre.");
+				}
+			}
+		</script>
+		<div class="principal">
+		<header>
+			<nav>
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="About.html">Sobre nosotros</a></li>
+					<li><a href="Info.html">Información</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<h2>Video explicativo</h2>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/XG1UPXghpr4?si=DIY2M80nBb2RRFuk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</main>
+		<footer>
+			<details>
+				<summary>Copyright</summary>
+				<fieldset>
+					<legend>Mas informacion</legend>
+					<p>TODOS LOS DERECHOS RESERVADOS</p>
+				</fieldset>
+			</details>
+			<div onclick="pedirTelefono()"><p>Contacta con nosotros</p></div>
+		</footer>
+		</div>
+	</body>
+</html>
+
